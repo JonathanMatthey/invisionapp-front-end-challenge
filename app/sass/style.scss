@@ -1,0 +1,50 @@
+
+@mixin background-opacity($color, $opacity: 0.3) {
+  background: $color; /* The Fallback */
+  background: rgba($color, $opacity);
+}
+
+// shared styles
+.pull-right{
+  float:right;
+}
+.clearfix:after {
+ content: " "; /* Older browser do not support empty content */
+ visibility: hidden;
+ display: block;
+ height: 0;
+ clear: both;
+}
+
+::-webkit-input-placeholder {
+ color: rgba(255,255,255,0.5);
+}
+
+:-moz-placeholder { /* Firefox 18- */
+ color: rgba(255,255,255,0.5);
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+ color: rgba(255,255,255,0.5);
+}
+
+:-ms-input-placeholder {
+ color: rgba(255,255,255,0.5);
+}
+
+h1{
+  color:#40444D;
+  margin: 40px 0;
+}
+
+$base-font-size: 16px;
+$small-font-size: 13px;
+$limegreen: #00b286;
+
+
+@import "_fonts";
+@import "_home";
+@import "_settings";
+@import "_toggle-switch";
+@import "_radio";
+

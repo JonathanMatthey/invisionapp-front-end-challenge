@@ -1,0 +1,461 @@
+
+// main styles
+body{
+  background-color:#fff;
+  margin:0;
+  padding:0;
+  font-family:"proxima_nova_rgregular",
+}
+
+// main page
+.header{
+  background-color:#262728;
+  padding:15px;
+  color:white;
+
+  .content{
+    max-width:1300px;
+    margin:0 auto;
+  }
+
+  input.search{
+    background-color: transparent;
+    border:1px solid #888;
+    border-radius: 3px;
+    background-image:url(../images/search-icon.png);
+    background-position: 175px center;
+    background-repeat:no-repeat;
+    width:200px;
+    height:26px;
+    opacity: 0.5;
+    color:white;
+  }
+
+  .btn-new-msg{
+    background-image:url(../images/new-msg-icon.png);
+    width:31px;
+    height:26px;
+    display: inline-block;
+    background-position: center center;
+    background-repeat:no-repeat;
+    margin:0 20px;
+    font-weight:100;
+    margin-top:4px;
+    margin-bottom:-4px;
+  }
+
+  .btn-profile{
+    margin:0 20px;
+    display: inline-block;
+    font-size:0;
+    vertical-align: middle;
+    color:white;
+
+    .thumb{
+      background-image:url(../images/users/thumbs/profile.png);
+      width:30px;
+      height:30px;
+      border-radius:2px;
+      display: inline-block;
+      background-position:center center;
+    }
+
+    i{
+      vertical-align: top;
+      margin-left:10px;
+      opacity:0.5;
+      margin-top:15px;
+    }
+  }
+
+}
+
+.logo{
+  width:137px;
+  height:25px;
+  background-position: center center;
+  background-repeat:no-repeat;
+  background-image:url(../images/logo.png);
+  display: inline-block;
+  margin-top:4px;
+  margin-bottom:-4px;
+}
+
+.header .nav{
+  list-style:none;
+  text-align:right;
+  padding:0;
+  margin: 0;
+
+  li{
+    display: inline-block;
+    vertical-align: middle;
+
+  }
+}
+
+
+a.btn-add-photo,
+a.btn-add-video{
+  color:#000;
+  text-decoration:none;
+  opacity: 0.5;
+  margin-right:30px;
+  transition: all 100ms linear;
+  font-weight:100;
+  font-family:"proxima_novalight";
+  font-size:15px;
+
+  i{
+    width:18px;
+    height:13px;
+    margin-right:10px;
+    display: inline-block;
+  }
+}
+
+a.btn-add-photo{
+  i{
+    background-image:url(../images/camera-icon.png);
+  }
+}
+a.btn-add-video{
+  i{
+    background-image:url(../images/video-icon.png);
+  }
+}
+
+.hero{
+  background-image:url(../images/rect.jpg);
+  min-height:430px;
+
+  .container{
+    min-height:430px;
+    position:relative;
+    padding:1px;
+
+    .new-entry{
+      @include background-opacity($limegreen, 0.7);
+      margin-top:125px;
+      padding:30px;
+      color:white;
+      text-align:left;
+      border-radius:3px;
+
+      .new-entry-msg{
+        width:100%;
+        font-size:32px;
+        background-color:transparent;
+        border:none;
+        margin-bottom:30px;
+        font-family:"proxima_novalight";
+        color:white;
+      }
+
+      a{
+        color:white;
+        text-decoration:none;
+        opacity: 0.5;
+        margin-right:30px;
+        transition: all 100ms linear;
+        font-weight:100;
+        font-family:"proxima_novalight";
+        font-size:15px;
+
+        &:hover{
+          opacity: 1;
+        }
+
+
+        &.btn-add-photo,
+        &.btn-add-video{
+          color:white;
+        }
+
+      }
+    }
+  }
+
+  ul.posts-menu{
+    bottom:0;
+    position:absolute;
+    list-style:none;
+    padding:0;
+    margin: 0;
+    width:100%;
+    text-align:left;
+
+    li{
+      font-size:13px;
+      color:#bec3cc;
+      text-transform:uppercase;
+      display: inline-block;
+      border-bottom:5px solid transparent;
+      margin:0 40px 0 0;
+      padding:10px;
+      padding-bottom:15px;
+
+      &:hover{
+        color: white;
+      }
+
+      &.active{
+        color:white;
+        border-bottom:5px solid $limegreen;
+      }
+
+      &.toggle-list,
+      &.toggle-grid{
+        width:10px;
+        height:10px;
+        background-position: center center;
+        background-repeat:no-repeat;
+        margin:10px;
+        padding: 0px;
+      }
+      &.toggle-grid{
+        background-image:url(../images/grid-icon.png);
+
+      }
+      &.toggle-list{
+        background-image:url(../images/list-icon.png);
+      }
+    }
+  }
+}
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px solid;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+
+.centered{
+  max-width:575px;
+  margin: 0 auto;
+}
+
+.posts{
+  padding-top:40px;
+  padding-bottom:40px;
+
+  .post{
+    text-align:left;
+    border: 1px solid #dee1e5;
+    border-radius:5px;
+    margin-bottom:20px;
+    font-size:0;
+
+    .content{
+      padding:25px;
+      font-size:$base-font-size;
+
+      > div{
+        display:inline-block;
+        vertical-align: top;
+      }
+
+      .post-author{
+        font-size:17px;
+        color:#3f454d;
+      }
+    }
+
+    p:last-child{
+      margin-bottom:0;
+    }
+
+    .img-wrapper{
+      width:40px;
+    }
+
+    .text-wrapper{
+      width:464px;
+      margin-left:15px;
+      position:relative;
+    }
+
+    .post-menu{
+      position: absolute;
+      top:0;
+      right:0;
+      color:#bec3cc;
+
+      a{
+        width:15px;
+        height:15px;
+        display: inline-block;
+        background-position: center center;
+        background-repeat:no-repeat;
+        margin-right: 15px;
+
+        &.btn-reply{
+          background-image:url(../images/reply.png);
+        }
+        &.btn-like{
+          background-image:url(../images/like.png);
+        }
+
+      }
+    }
+
+    .body{
+      margin-top:5px;
+      text-align:left;
+      color:#70767f;
+      line-height: 24px;
+    }
+  }
+}
+
+.footer{
+  border-top:1px solid #eee;
+  text-align:center;
+
+  ul{
+    list-style:none;
+
+    li{
+      text-transform:uppercase;
+      display: inline-block;
+      margin: 0 10px;
+      font-size:$small-font-size;
+
+      a{
+        color:$limegreen;
+      }
+    }
+  }
+}
+
+.pop-up-overlay{
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  display: none;
+  background-color:#000;
+  opacity:0.7;
+}
+
+.pop-up.new-msg{
+  display: none;
+  position:absolute;
+  top:180px;
+  left:50%;
+  transform:translateX(-50%);
+  width:530px;
+  height:160px;
+  background-color:#DEE1E6;
+  padding:25px;
+  border-radius:5px;
+
+  textarea{
+    width:100%;
+    border:none;
+    min-height:80px;
+    font-size:32px;
+    margin-bottom:15px;
+    margin-top:5px;
+    border-radius:2px;
+    padding: 0;
+  }
+
+  .title{
+    margin-bottom:10px;
+    opacity: 0.7;
+    font-size:17px;
+  }
+
+  .btn-post{
+    height:32px;
+    line-height:32px;
+    margin-top:0;
+  }
+
+  a{
+    margin-top:10px;
+    display: inline-block;
+  }
+
+}
+
+.show-pop-up--new-msg{
+  .pop-up.new-msg,
+  .pop-up-overlay{
+    display:block;
+  }
+}
+
+
+:root
+
+.css3-gaussian-blur *
+{
+    text-shadow: 0 0 10px rgba(0, 0, 0, .5) !important;
+    color: transparent !important;
+    background-image: none !important;
+    border-color: rgba(0, 0, 0, .05) !important;
+    /* disable the pointer events for blurred zones */
+    -moz-pointer-events: none !important;
+    -webkit-pointer-events: none !important;
+    pointer-events: none !important;
+}
+
+:root .css3-gaussian-blur input,
+:root .css3-gaussian-blur textarea,
+:root .css3-gaussian-blur button,
+:root .css3-gaussian-blur select
+{
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5) !important;
+    border-color: rgba(0, 0, 0, .05) !important;
+    resize: none !important;
+    opacity: .5 !important;
+}
+
+:root .css3-gaussian-blur img,
+:root .css3-gaussian-blur input,
+:root .css3-gaussian-blur input[type="file"],
+:root .css3-gaussian-blur input[type="checkbox"],
+:root .css3-gaussian-blur input[type="radio"]
+:root .css3-gaussian-blur textarea,
+:root .css3-gaussian-blur select
+{
+    opacity: .2 !important;
+    background: transparent none !important;
+}
+
+:root .css3-gaussian-blur fieldset
+{
+    border-color: transparent !important;
+}
+
+/* Vendor-specific styles */
+/* CSS3 filters are currently supported by Chrome only */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    :root .css3-gaussian-blur img
+    {
+        -webkit-filter: blur(15px) !important;
+        filter: blur(15px) !important;
+        opacity: 1 !important; /* restore the opacity for that browser */
+    }
+}
+
+/* IE<10 styles using the \9 hack */
+:root .css3-gaussian-blur img
+{
+    filter: progid:DXImageTransform.Microsoft.Blur(pixelradius=20)\9 !important; /* IE has native support for filters since version 5.5 */
+    -ms-filter: progid:DXImageTransform.Microsoft.Blur(pixelradius=20)\9 !important; /* IE has native support for filters since version 5.5 */
+    opacity: 1\9 !important;
+}
+
+:root .css3-gaussian-blur *
+{
+    color: #ccc !important\9;
+}
+

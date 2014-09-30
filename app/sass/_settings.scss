@@ -1,0 +1,98 @@
+.settings{
+  padding-bottom:100px;
+}
+
+.settings-block{
+  padding-bottom:50px;
+  margin-bottom:50px;
+  border-bottom:1px solid #e4e4e4;
+  color:#444;
+
+  > div {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  h3{
+    text-transform:uppercase;
+    font-size:13px;
+  }
+
+  .col-img{
+    width:120px;
+
+    .thumb{
+      width:85px;
+      border-radius:3px;
+    }
+
+    .btn-change{
+      border:1px solid #ccc;
+      border-radius:3px;
+      color:#ddd;
+      font-size:14px;
+      padding:5px 0;
+      width:85px;
+      text-align:center;
+      display: inline-block;
+      margin-top:3px;
+    }
+  }
+
+  .col-details{
+    width:375px;
+
+    input{
+      border:1px solid #BFC3CC;
+      border-radius:3px;
+      width:100%;
+      font-size:16px;
+      height:40px;
+      width:365px;
+      padding:0;
+      margin: 0 20px 20px 20px;
+      color:#999;
+      text-indent:40px;
+
+      &:last-child{
+        margin-bottom:0;
+      }
+    }
+  }
+
+  .input-row{
+    clear:both;
+    width:100%;
+
+    .option{
+      margin-right:20px;
+    }
+    > label{
+      display:inline-block;
+      vertical-align: middle;
+      margin: 10px 0;
+    }
+    .toggle-label{
+      margin-left:20px;
+    }
+  }
+}
+
+.btn-primary{
+  background-color:#00B385;
+  border-radius:2px;
+  color:white;
+  text-align:center;
+  height:40px;
+  display: inline-block;
+  line-height:40px;
+}
+
+.btn-save{
+  width:150px;
+}
+
+.btn-post{
+  width:80px;
+}
+
